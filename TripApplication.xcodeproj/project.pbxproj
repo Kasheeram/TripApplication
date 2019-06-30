@@ -15,6 +15,16 @@
 		8926F27022C52A5900C785F4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8926F26E22C52A5900C785F4 /* LaunchScreen.storyboard */; };
 		8926F27B22C52A5900C785F4 /* TripApplicationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926F27A22C52A5900C785F4 /* TripApplicationTests.swift */; };
 		8926F28622C52A5900C785F4 /* TripApplicationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926F28522C52A5900C785F4 /* TripApplicationUITests.swift */; };
+		8926F29422C52DAD00C785F4 /* TripDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926F29322C52DAD00C785F4 /* TripDetailsController.swift */; };
+		8926F29622C539D300C785F4 /* TripDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8926F29522C539D300C785F4 /* TripDetailsCell.swift */; };
+		893A76B322C6206100094DE6 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A76B222C6206000094DE6 /* PaymentCell.swift */; };
+		893A76B522C6209D00094DE6 /* TenderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A76B422C6209D00094DE6 /* TenderCell.swift */; };
+		893A76B922C63EAC00094DE6 /* Extensions+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893A76B822C63EAC00094DE6 /* Extensions+UIView.swift */; };
+		8967C9DD22C77DC200FE246F /* FeedJson.json in Sources */ = {isa = PBXBuildFile; fileRef = 8967C9DC22C77DC200FE246F /* FeedJson.json */; };
+		8967C9E122C780A400FE246F /* TestJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 8967C9E022C780A400FE246F /* TestJson.json */; };
+		8967C9E822C79BFB00FE246F /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967C9E722C79BFB00FE246F /* Utility.swift */; };
+		8967C9EA22C7B3A700FE246F /* DetailsSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8967C9E922C7B3A700FE246F /* DetailsSheet.swift */; };
+		89DEF12822C8A0DA00B3C42B /* TripDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89DEF12722C8A0DA00B3C42B /* TripDetailsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +59,16 @@
 		8926F28122C52A5900C785F4 /* TripApplicationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TripApplicationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8926F28522C52A5900C785F4 /* TripApplicationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripApplicationUITests.swift; sourceTree = "<group>"; };
 		8926F28722C52A5900C785F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8926F29322C52DAD00C785F4 /* TripDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsController.swift; sourceTree = "<group>"; };
+		8926F29522C539D300C785F4 /* TripDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsCell.swift; sourceTree = "<group>"; };
+		893A76B222C6206000094DE6 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		893A76B422C6209D00094DE6 /* TenderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TenderCell.swift; sourceTree = "<group>"; };
+		893A76B822C63EAC00094DE6 /* Extensions+UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Extensions+UIView.swift"; sourceTree = "<group>"; };
+		8967C9DC22C77DC200FE246F /* FeedJson.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FeedJson.json; sourceTree = "<group>"; };
+		8967C9E022C780A400FE246F /* TestJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = TestJson.json; sourceTree = "<group>"; };
+		8967C9E722C79BFB00FE246F /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		8967C9E922C7B3A700FE246F /* DetailsSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsSheet.swift; sourceTree = "<group>"; };
+		89DEF12722C8A0DA00B3C42B /* TripDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripDetailsModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,13 +119,18 @@
 		8926F26122C52A5500C785F4 /* TripApplication */ = {
 			isa = PBXGroup;
 			children = (
+				89DEF12622C8A0BE00B3C42B /* Model */,
+				8967C9E622C79BCE00FE246F /* Utilities */,
+				893A76B722C620C500094DE6 /* Controller */,
+				893A76B622C620AD00094DE6 /* View */,
 				8926F26222C52A5500C785F4 /* AppDelegate.swift */,
-				8926F26422C52A5500C785F4 /* ViewController.swift */,
 				8926F26622C52A5500C785F4 /* Main.storyboard */,
 				8926F26C22C52A5900C785F4 /* Assets.xcassets */,
 				8926F26E22C52A5900C785F4 /* LaunchScreen.storyboard */,
+				8967C9E022C780A400FE246F /* TestJson.json */,
 				8926F27122C52A5900C785F4 /* Info.plist */,
 				8926F26922C52A5500C785F4 /* TripApplication.xcdatamodeld */,
+				8967C9DC22C77DC200FE246F /* FeedJson.json */,
 			);
 			path = TripApplication;
 			sourceTree = "<group>";
@@ -126,6 +151,43 @@
 				8926F28722C52A5900C785F4 /* Info.plist */,
 			);
 			path = TripApplicationUITests;
+			sourceTree = "<group>";
+		};
+		893A76B622C620AD00094DE6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8926F29522C539D300C785F4 /* TripDetailsCell.swift */,
+				893A76B222C6206000094DE6 /* PaymentCell.swift */,
+				893A76B422C6209D00094DE6 /* TenderCell.swift */,
+				893A76B822C63EAC00094DE6 /* Extensions+UIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		893A76B722C620C500094DE6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8926F26422C52A5500C785F4 /* ViewController.swift */,
+				8926F29322C52DAD00C785F4 /* TripDetailsController.swift */,
+				8967C9E922C7B3A700FE246F /* DetailsSheet.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8967C9E622C79BCE00FE246F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				8967C9E722C79BFB00FE246F /* Utility.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		89DEF12622C8A0BE00B3C42B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				89DEF12722C8A0DA00B3C42B /* TripDetailsModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +297,7 @@
 				8926F27022C52A5900C785F4 /* LaunchScreen.storyboard in Resources */,
 				8926F26D22C52A5900C785F4 /* Assets.xcassets in Resources */,
 				8926F26822C52A5500C785F4 /* Main.storyboard in Resources */,
+				8967C9E122C780A400FE246F /* TestJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,9 +322,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8967C9E822C79BFB00FE246F /* Utility.swift in Sources */,
+				893A76B322C6206100094DE6 /* PaymentCell.swift in Sources */,
+				8967C9EA22C7B3A700FE246F /* DetailsSheet.swift in Sources */,
+				89DEF12822C8A0DA00B3C42B /* TripDetailsModel.swift in Sources */,
 				8926F26B22C52A5500C785F4 /* TripApplication.xcdatamodeld in Sources */,
 				8926F26522C52A5500C785F4 /* ViewController.swift in Sources */,
 				8926F26322C52A5500C785F4 /* AppDelegate.swift in Sources */,
+				8926F29422C52DAD00C785F4 /* TripDetailsController.swift in Sources */,
+				8926F29622C539D300C785F4 /* TripDetailsCell.swift in Sources */,
+				8967C9DD22C77DC200FE246F /* FeedJson.json in Sources */,
+				893A76B922C63EAC00094DE6 /* Extensions+UIView.swift in Sources */,
+				893A76B522C6209D00094DE6 /* TenderCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
