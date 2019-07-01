@@ -36,7 +36,7 @@ class TripDetailsController: UIViewController, UITableViewDelegate, UITableViewD
     
     var emailId:String?
     
-    var tripDetails:TripDetails?
+    var tripDetails:Json4Swift_Base?
     
     let tableBackgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
     
@@ -134,10 +134,10 @@ class TripDetailsController: UIViewController, UITableViewDelegate, UITableViewD
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
                 
                 let decoder = JSONDecoder()
-                decoder.keyDecodingStrategy = .convertFromSnakeCase
-                self.tripDetails = try decoder.decode(TripDetails.self, from: data)
+//                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                self.tripDetails = try decoder.decode(Json4Swift_Base.self, from: data)
         
-                print(self.tripDetails?.payload?.roundTripInfo)
+                print(self.tripDetails?.payload?.round_trip_info?.total_dist)
                 
             } catch let err {
                 print(err)
