@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Address : Codable {
+struct Address : Decodable {
 	let sl4_address_id : Int?
 	let street : String?
 	let city : String?
@@ -24,32 +24,32 @@ struct Address : Codable {
 	let bldg : String?
 	let scr_name : String?
 
-	enum CodingKeys: String, CodingKey {
+//    enum CodingKeys: String, CodingKey {
+//
+//        case sl4_address_id = "sl4_address_id"
+//        case street = "street"
+//        case city = "city"
+//        case state = "state"
+//        case country_code = "country_code"
+//        case postal_code = "postal_code"
+//        case latitude = "latitude"
+//        case longitude = "longitude"
+//        case bldg = "bldg"
+//        case scr_name = "scr_name"
+//    }
 
-		case sl4_address_id = "sl4_address_id"
-		case street = "street"
-		case city = "city"
-		case state = "state"
-		case country_code = "country_code"
-		case postal_code = "postal_code"
-		case latitude = "latitude"
-		case longitude = "longitude"
-		case bldg = "bldg"
-		case scr_name = "scr_name"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		sl4_address_id = try values.decodeIfPresent(Int.self, forKey: .sl4_address_id)
-		street = try values.decodeIfPresent(String.self, forKey: .street)
-		city = try values.decodeIfPresent(String.self, forKey: .city)
-		state = try values.decodeIfPresent(String.self, forKey: .state)
-		country_code = try values.decodeIfPresent(String.self, forKey: .country_code)
-		postal_code = try values.decodeIfPresent(String.self, forKey: .postal_code)
-		latitude = try values.decodeIfPresent(String.self, forKey: .latitude)
-		longitude = try values.decodeIfPresent(String.self, forKey: .longitude)
-		bldg = try values.decodeIfPresent(String.self, forKey: .bldg)
-		scr_name = try values.decodeIfPresent(String.self, forKey: .scr_name)
-	}
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        sl4_address_id = try values.decodeIfPresent(Int.self, forKey: .sl4_address_id)
+//        street = try values.decodeIfPresent(String.self, forKey: .street)
+//        city = try values.decodeIfPresent(String.self, forKey: .city)
+//        state = try values.decodeIfPresent(String.self, forKey: .state)
+//        country_code = try values.decodeIfPresent(String.self, forKey: .country_code)
+//        postal_code = try values.decodeIfPresent(String.self, forKey: .postal_code)
+//        latitude = try values.decodeIfPresent(String.self, forKey: .latitude)
+//        longitude = try values.decodeIfPresent(String.self, forKey: .longitude)
+//        bldg = try values.decodeIfPresent(String.self, forKey: .bldg)
+//        scr_name = try values.decodeIfPresent(String.self, forKey: .scr_name)
+//    }
 
 }

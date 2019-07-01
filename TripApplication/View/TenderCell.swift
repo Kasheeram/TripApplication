@@ -56,6 +56,12 @@ class TenderCell: UITableViewCell {
         return label
     }()
     
+    var trip: Trips? {
+        didSet {
+            
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

@@ -12,20 +12,20 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Json4Swift_Base : Codable {
+struct Json4Swift_Base : Decodable {
 	let message : String?
 	let payload : Payload?
 
-	enum CodingKeys: String, CodingKey {
-
-		case message = "message"
-		case payload = "payload"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		message = try values.decodeIfPresent(String.self, forKey: .message)
-		payload = try values.decodeIfPresent(Payload.self, forKey: .payload)
-	}
+//    enum CodingKeys: String, CodingKey {
+//
+//        case message = "message"
+//        case payload = "payload"
+//    }
+//
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        message = try values.decodeIfPresent(String.self, forKey: .message)
+//        payload = try values.decodeIfPresent(Payload.self, forKey: .payload)
+//    }
 
 }

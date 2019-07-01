@@ -12,29 +12,29 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Tenders : Codable {
+struct Tenders : Decodable {
 	let tender_request_id : String?
 	let trips : [Trips]?
 	let round_trip_status : Int?
 	let driver_tender_status : Int?
 	let carrier_tender_status : Int?
 
-	enum CodingKeys: String, CodingKey {
+//    enum CodingKeys: String, CodingKey {
+//
+//        case tender_request_id = "tender_request_id"
+//        case trips = "trips"
+//        case round_trip_status = "round_trip_status"
+//        case driver_tender_status = "driver_tender_status"
+//        case carrier_tender_status = "carrier_tender_status"
+//    }
 
-		case tender_request_id = "tender_request_id"
-		case trips = "trips"
-		case round_trip_status = "round_trip_status"
-		case driver_tender_status = "driver_tender_status"
-		case carrier_tender_status = "carrier_tender_status"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		tender_request_id = try values.decodeIfPresent(String.self, forKey: .tender_request_id)
-		trips = try values.decodeIfPresent([Trips].self, forKey: .trips)
-		round_trip_status = try values.decodeIfPresent(Int.self, forKey: .round_trip_status)
-		driver_tender_status = try values.decodeIfPresent(Int.self, forKey: .driver_tender_status)
-		carrier_tender_status = try values.decodeIfPresent(Int.self, forKey: .carrier_tender_status)
-	}
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        tender_request_id = try values.decodeIfPresent(String.self, forKey: .tender_request_id)
+//        trips = try values.decodeIfPresent([Trips].self, forKey: .trips)
+//        round_trip_status = try values.decodeIfPresent(Int.self, forKey: .round_trip_status)
+//        driver_tender_status = try values.decodeIfPresent(Int.self, forKey: .driver_tender_status)
+//        carrier_tender_status = try values.decodeIfPresent(Int.self, forKey: .carrier_tender_status)
+//    }
 
 }

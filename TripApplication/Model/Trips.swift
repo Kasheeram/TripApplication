@@ -12,7 +12,7 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Trips : Codable {
+struct Trips : Decodable {
 	let sl4_round_trip_id : Int?
 	let sl4_trip_id : Int?
 	let src_trip_id : String?
@@ -46,76 +46,76 @@ struct Trips : Codable {
 	let total_Packages : String?
 	let stops_info : [Stops_info]?
 
-	enum CodingKeys: String, CodingKey {
+//    enum CodingKeys: String, CodingKey {
+//
+//        case sl4_round_trip_id = "sl4_round_trip_id"
+//        case sl4_trip_id = "sl4_trip_id"
+//        case src_trip_id = "src_trip_id"
+//        case tender_request_id = "tender_request_id"
+//        case customer_name = "customer_name"
+//        case customer_code = "customer_code"
+//        case carrier_code = "carrier_code"
+//        case trip_start_date = "trip_start_date"
+//        case trip_end_date = "trip_end_date"
+//        case trip_creation_date = "trip_creation_date"
+//        case trip_seq = "trip_seq"
+//        case trip_status = "trip_status"
+//        case acceptance_required_by = "acceptance_required_by"
+//        case driver_tender_status = "driver_tender_status"
+//        case carrier_tender_status = "carrier_tender_status"
+//        case total_dist = "total_dist"
+//        case total_dist_unit = "total_dist_unit"
+//        case truck_type = "truck_type"
+//        case truck_number = "truck_number"
+//        case trailer_type = "trailer_type"
+//        case trailer_number = "trailer_number"
+//        case total_driving_time = "total_driving_time"
+//        case total_driving_time_unit = "total_driving_time_unit"
+//        case total_w = "total_w"
+//        case total_w_unit = "total_w_unit"
+//        case material_w = "material_w"
+//        case material_w_unit = "material_w_unit"
+//        case total_pieces = "total_pieces"
+//        case total_vol = "total_vol"
+//        case total_vol_unit = "total_vol_unit"
+//        case total_Packages = "total_Packages"
+//        case stops_info = "stops_info"
+//    }
 
-		case sl4_round_trip_id = "sl4_round_trip_id"
-		case sl4_trip_id = "sl4_trip_id"
-		case src_trip_id = "src_trip_id"
-		case tender_request_id = "tender_request_id"
-		case customer_name = "customer_name"
-		case customer_code = "customer_code"
-		case carrier_code = "carrier_code"
-		case trip_start_date = "trip_start_date"
-		case trip_end_date = "trip_end_date"
-		case trip_creation_date = "trip_creation_date"
-		case trip_seq = "trip_seq"
-		case trip_status = "trip_status"
-		case acceptance_required_by = "acceptance_required_by"
-		case driver_tender_status = "driver_tender_status"
-		case carrier_tender_status = "carrier_tender_status"
-		case total_dist = "total_dist"
-		case total_dist_unit = "total_dist_unit"
-		case truck_type = "truck_type"
-		case truck_number = "truck_number"
-		case trailer_type = "trailer_type"
-		case trailer_number = "trailer_number"
-		case total_driving_time = "total_driving_time"
-		case total_driving_time_unit = "total_driving_time_unit"
-		case total_w = "total_w"
-		case total_w_unit = "total_w_unit"
-		case material_w = "material_w"
-		case material_w_unit = "material_w_unit"
-		case total_pieces = "total_pieces"
-		case total_vol = "total_vol"
-		case total_vol_unit = "total_vol_unit"
-		case total_Packages = "total_Packages"
-		case stops_info = "stops_info"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		sl4_round_trip_id = try values.decodeIfPresent(Int.self, forKey: .sl4_round_trip_id)
-		sl4_trip_id = try values.decodeIfPresent(Int.self, forKey: .sl4_trip_id)
-		src_trip_id = try values.decodeIfPresent(String.self, forKey: .src_trip_id)
-		tender_request_id = try values.decodeIfPresent(String.self, forKey: .tender_request_id)
-		customer_name = try values.decodeIfPresent(String.self, forKey: .customer_name)
-		customer_code = try values.decodeIfPresent(String.self, forKey: .customer_code)
-		carrier_code = try values.decodeIfPresent(String.self, forKey: .carrier_code)
-		trip_start_date = try values.decodeIfPresent(String.self, forKey: .trip_start_date)
-		trip_end_date = try values.decodeIfPresent(String.self, forKey: .trip_end_date)
-		trip_creation_date = try values.decodeIfPresent(String.self, forKey: .trip_creation_date)
-		trip_seq = try values.decodeIfPresent(Int.self, forKey: .trip_seq)
-		trip_status = try values.decodeIfPresent(String.self, forKey: .trip_status)
-		acceptance_required_by = try values.decodeIfPresent(String.self, forKey: .acceptance_required_by)
-		driver_tender_status = try values.decodeIfPresent(Int.self, forKey: .driver_tender_status)
-		carrier_tender_status = try values.decodeIfPresent(Int.self, forKey: .carrier_tender_status)
-		total_dist = try values.decodeIfPresent(Double.self, forKey: .total_dist)
-		total_dist_unit = try values.decodeIfPresent(String.self, forKey: .total_dist_unit)
-		truck_type = try values.decodeIfPresent(String.self, forKey: .truck_type)
-		truck_number = try values.decodeIfPresent(String.self, forKey: .truck_number)
-		trailer_type = try values.decodeIfPresent(String.self, forKey: .trailer_type)
-		trailer_number = try values.decodeIfPresent(String.self, forKey: .trailer_number)
-		total_driving_time = try values.decodeIfPresent(String.self, forKey: .total_driving_time)
-		total_driving_time_unit = try values.decodeIfPresent(String.self, forKey: .total_driving_time_unit)
-		total_w = try values.decodeIfPresent(Double.self, forKey: .total_w)
-		total_w_unit = try values.decodeIfPresent(String.self, forKey: .total_w_unit)
-		material_w = try values.decodeIfPresent(Double.self, forKey: .material_w)
-		material_w_unit = try values.decodeIfPresent(String.self, forKey: .material_w_unit)
-		total_pieces = try values.decodeIfPresent(String.self, forKey: .total_pieces)
-		total_vol = try values.decodeIfPresent(String.self, forKey: .total_vol)
-		total_vol_unit = try values.decodeIfPresent(String.self, forKey: .total_vol_unit)
-		total_Packages = try values.decodeIfPresent(String.self, forKey: .total_Packages)
-		stops_info = try values.decodeIfPresent([Stops_info].self, forKey: .stops_info)
-	}
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        sl4_round_trip_id = try values.decodeIfPresent(Int.self, forKey: .sl4_round_trip_id)
+//        sl4_trip_id = try values.decodeIfPresent(Int.self, forKey: .sl4_trip_id)
+//        src_trip_id = try values.decodeIfPresent(String.self, forKey: .src_trip_id)
+//        tender_request_id = try values.decodeIfPresent(String.self, forKey: .tender_request_id)
+//        customer_name = try values.decodeIfPresent(String.self, forKey: .customer_name)
+//        customer_code = try values.decodeIfPresent(String.self, forKey: .customer_code)
+//        carrier_code = try values.decodeIfPresent(String.self, forKey: .carrier_code)
+//        trip_start_date = try values.decodeIfPresent(String.self, forKey: .trip_start_date)
+//        trip_end_date = try values.decodeIfPresent(String.self, forKey: .trip_end_date)
+//        trip_creation_date = try values.decodeIfPresent(String.self, forKey: .trip_creation_date)
+//        trip_seq = try values.decodeIfPresent(Int.self, forKey: .trip_seq)
+//        trip_status = try values.decodeIfPresent(String.self, forKey: .trip_status)
+//        acceptance_required_by = try values.decodeIfPresent(String.self, forKey: .acceptance_required_by)
+//        driver_tender_status = try values.decodeIfPresent(Int.self, forKey: .driver_tender_status)
+//        carrier_tender_status = try values.decodeIfPresent(Int.self, forKey: .carrier_tender_status)
+//        total_dist = try values.decodeIfPresent(Double.self, forKey: .total_dist)
+//        total_dist_unit = try values.decodeIfPresent(String.self, forKey: .total_dist_unit)
+//        truck_type = try values.decodeIfPresent(String.self, forKey: .truck_type)
+//        truck_number = try values.decodeIfPresent(String.self, forKey: .truck_number)
+//        trailer_type = try values.decodeIfPresent(String.self, forKey: .trailer_type)
+//        trailer_number = try values.decodeIfPresent(String.self, forKey: .trailer_number)
+//        total_driving_time = try values.decodeIfPresent(String.self, forKey: .total_driving_time)
+//        total_driving_time_unit = try values.decodeIfPresent(String.self, forKey: .total_driving_time_unit)
+//        total_w = try values.decodeIfPresent(Double.self, forKey: .total_w)
+//        total_w_unit = try values.decodeIfPresent(String.self, forKey: .total_w_unit)
+//        material_w = try values.decodeIfPresent(Double.self, forKey: .material_w)
+//        material_w_unit = try values.decodeIfPresent(String.self, forKey: .material_w_unit)
+//        total_pieces = try values.decodeIfPresent(String.self, forKey: .total_pieces)
+//        total_vol = try values.decodeIfPresent(String.self, forKey: .total_vol)
+//        total_vol_unit = try values.decodeIfPresent(String.self, forKey: .total_vol_unit)
+//        total_Packages = try values.decodeIfPresent(String.self, forKey: .total_Packages)
+//        stops_info = try values.decodeIfPresent([Stops_info].self, forKey: .stops_info)
+//    }
 
 }

@@ -37,6 +37,9 @@ class TripDetailsController: UIViewController, UITableViewDelegate, UITableViewD
     var emailId:String?
     
     var tripDetails:Json4Swift_Base?
+    var roundTripInfo : Round_trip_info?
+    var tenders: [Tenders]?
+    var trips  = [[Trips]]()
     
     let tableBackgroundColor = UIColor(red: 247/255, green: 247/255, blue: 247/255, alpha: 1)
     
@@ -99,6 +102,14 @@ class TripDetailsController: UIViewController, UITableViewDelegate, UITableViewD
         subTitleLabel.text = emailId ?? "NA"
         getJsonDataFromFile()
         setupViews()
+        
+//        let trip1 = [Trips]()
+//        let trip2 = [Trips]()
+//
+//        trips.append(trip1)
+//        trips.append(trip2)
+        
+        
     }
     
     
@@ -136,8 +147,18 @@ class TripDetailsController: UIViewController, UITableViewDelegate, UITableViewD
                 let decoder = JSONDecoder()
 //                decoder.keyDecodingStrategy = .convertFromSnakeCase
                 self.tripDetails = try decoder.decode(Json4Swift_Base.self, from: data)
-        
-                print(self.tripDetails?.payload?.round_trip_info?.total_dist)
+                
+                roundTripInfo = self.tripDetails?.payload?.round_trip_info
+                tenders = self.tripDetails?.payload?.tenders
+
+                if let tenders = tenders {
+                    for tender in tenders {
+                        if let trip = tender.trips {
+                            trips.append(trip)
+                        }
+                    }
+                }
+                tableview.reloadData()
                 
             } catch let err {
                 print(err)
@@ -160,26 +181,29 @@ class TripDetailsController: UIViewController, UITableViewDelegate, UITableViewD
 
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return trips.count + 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 || section == 1 {
             return 1
         } else {
-            return 2
+//            print(section)
+            return trips[3-section].count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableview.dequeueReusableCell(withIdentifier: tripDetailCellId, for: indexPath) as! TripDetailsCell
+            cell.roundTripInfp = self.roundTripInfo
             return cell
         } else if indexPath.section == 1 {
             let cell = tableview.dequeueReusableCell(withIdentifier: paymentCellId, for: indexPath) as! PaymentCell
             return cell
         } else {
             let cell = tableview.dequeueReusableCell(withIdentifier: tenderCellId, for: indexPath) as! TenderCell
+//            let trip = trips[3-indexPath.section][3-indexPath.row]
             return cell
         }
     }

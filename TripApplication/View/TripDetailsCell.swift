@@ -92,6 +92,19 @@ class TripDetailsCell: UITableViewCell {
     }()
 
     
+    var roundTripInfp: Round_trip_info? {
+        didSet {
+            guard let roundTrip = roundTripInfp else { return }
+            carrierNameLabel.text = roundTrip.carrier_code ?? ""
+            truckTypeLabel.text = roundTrip.truck_type ?? ""
+            nALabel.text = "NA"
+            distanceLabel.text = String(describing: roundTrip.total_dist ?? 0.0)
+            drivingTimeLabel.text = String(describing: roundTrip.total_driving_time ?? 0.0)
+            weightLabel.text = String(describing: roundTrip.total_w ?? 0.0)
+            
+            
+        }
+    }
     
     
     override func awakeFromNib() {

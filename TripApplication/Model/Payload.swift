@@ -12,20 +12,20 @@ For support, please feel free to contact me at https://www.linkedin.com/in/syeda
 */
 
 import Foundation
-struct Payload : Codable {
+struct Payload : Decodable {
 	let round_trip_info : Round_trip_info?
 	let tenders : [Tenders]?
 
-	enum CodingKeys: String, CodingKey {
+//    enum CodingKeys: String, CodingKey {
+//
+//        case round_trip_info = "round_trip_info"
+//        case tenders = "tenders"
+//    }
 
-		case round_trip_info = "round_trip_info"
-		case tenders = "tenders"
-	}
-
-	init(from decoder: Decoder) throws {
-		let values = try decoder.container(keyedBy: CodingKeys.self)
-		round_trip_info = try values.decodeIfPresent(Round_trip_info.self, forKey: .round_trip_info)
-		tenders = try values.decodeIfPresent([Tenders].self, forKey: .tenders)
-	}
+//    init(from decoder: Decoder) throws {
+//        let values = try decoder.container(keyedBy: CodingKeys.self)
+//        round_trip_info = try values.decodeIfPresent(Round_trip_info.self, forKey: .round_trip_info)
+//        tenders = try values.decodeIfPresent([Tenders].self, forKey: .tenders)
+//    }
 
 }

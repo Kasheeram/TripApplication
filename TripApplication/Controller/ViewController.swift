@@ -66,30 +66,35 @@ class ViewController: UIViewController {
     
     @objc private func didLoginButtonTapped() {
         
-        if let email = emailTextField.text, let pass = passWordTextField.text {
         
-            if (email.count) == 0 {
-                showValidationAlert(message: "Please enter email id",presentVc : self) {
-                }
-            }
-            else if (pass.count) == 0 {
-                showValidationAlert(message: "Please enter password",presentVc : self) {
-                }
-            } else if (email.count) > 0 && (pass.count) > 0 {
-                if  isValidEmail(testStr: email) {
-
-                    saveUserDetailsToCoreData()
-                    let tripDetailsController = TripDetailsController()
-                    tripDetailsController.emailId = email
-                    navigationController?.pushViewController(tripDetailsController, animated: true)
-
-                }else {
-                    showValidationAlert(message: "Please enter a valid email address",presentVc : self) {
-                    }
-                }
-            }else {
-
-            }
+        if let email = emailTextField.text, let pass = passWordTextField.text {
+            
+            let tripDetailsController = TripDetailsController()
+            tripDetailsController.emailId = email
+            navigationController?.pushViewController(tripDetailsController, animated: true)
+        
+//            if (email.count) == 0 {
+//                showValidationAlert(message: "Please enter email id",presentVc : self) {
+//                }
+//            }
+//            else if (pass.count) == 0 {
+//                showValidationAlert(message: "Please enter password",presentVc : self) {
+//                }
+//            } else if (email.count) > 0 && (pass.count) > 0 {
+//                if  isValidEmail(testStr: email) {
+//
+//                    saveUserDetailsToCoreData()
+//                    let tripDetailsController = TripDetailsController()
+//                    tripDetailsController.emailId = email
+//                    navigationController?.pushViewController(tripDetailsController, animated: true)
+//
+//                }else {
+//                    showValidationAlert(message: "Please enter a valid email address",presentVc : self) {
+//                    }
+//                }
+//            }else {
+//
+//            }
         }
         
     }
